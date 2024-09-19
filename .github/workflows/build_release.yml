@@ -27,7 +27,7 @@ jobs:
         run: ./build.sh
 
       - name: Upload artifact
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: build
           path: build
@@ -61,7 +61,7 @@ jobs:
         run: awk '/^## / {if (p) {exit}; {p=1}} p' CHANGELOG.md > latest-CHANGELOG.md
 
       - name: Get build artifact
-        uses: actions/download-artifact@v3
+        uses: actions/download-artifact@v4
 
       - name: Release
         uses: softprops/action-gh-release@v1
